@@ -3,6 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!-- Display on browser tab -->
+    <display-name>MVCpractice</display-name>
+
+    <!-- Which .jsp to load first, aka the home page -->
+    <welcome-file-list>
+        <welcome-file>hello.jsp</welcome-file>
+    </welcome-file-list>
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/applicationContext.xml</param-value>
@@ -19,12 +28,13 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <!-- URL pattern -->
-        <!-- explanation: http://docs.roguewave.com/hydraexpress/3.5.0/html/rwsfservletug/4-3.html -->
+
     <!-- servlet-mapping -->
         <!-- All URL requests should be mapped to spring MVC framework for further processing -->
+    <!-- URL pattern -->
+        <!-- explanation: http://docs.roguewave.com/hydraexpress/3.5.0/html/rwsfservletug/4-3.html -->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.form</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
