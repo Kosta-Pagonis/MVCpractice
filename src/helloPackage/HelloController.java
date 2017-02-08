@@ -11,7 +11,7 @@ import org.springframework.ui.ModelMap;
 
 @Controller
 @RequestMapping("/hello")
-public class HelloController{
+public class HelloController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model) {
@@ -19,4 +19,3 @@ public class HelloController{
         return "hello"; //Name of the jsp - using a different name will result in a different jsp being loaded.
     }
 }
-
