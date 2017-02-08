@@ -12,5 +12,9 @@
   </head>
   <body>
   Hey.
+  <br>
+    <!-- This button takes you to the hello page -->
+  <input type="button"  onclick="location.href='/hello'" value="Hello">
   </body>
+  <h2>${message}</h2>
 </html>
