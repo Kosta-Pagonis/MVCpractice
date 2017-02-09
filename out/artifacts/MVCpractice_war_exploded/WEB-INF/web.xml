@@ -8,9 +8,11 @@
     <display-name>MVCpractice</display-name>
 
     <!-- Which .jsp to load first, aka the home page -->
+    <!--
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    -->
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -37,4 +39,13 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
 </web-app>
