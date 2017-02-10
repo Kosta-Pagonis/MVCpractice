@@ -3,22 +3,20 @@
 <html>
     <head>
 		<spring:url value="/resources/css/toDoTable.css" var="toDoTableCSS" />
-		<spring:url value="/resources/js/jquery.3.1.1.min.js" var="jqueryJs" />
+		<spring:url value="/resources/js/jquery-311min.jsp" var="jqueryJs" />
 		<spring:url value="/resources/js/toDoTable.js" var="toDoTableJs" />
+		<spring:url value="/resources/img/addItemIcon.png" var="addItemIcon" />
 		<link href="${toDoTableCSS}" rel="stylesheet" />
 		<script src="${jqueryJs}"></script>
 		<script src="${toDoTableJs}"></script>
 
         <title>To Do List Maker</title>
-        <link rel="stylesheet" href="stylesheets/toDoTable.css" />
-        <script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="javascripts/toDoTable.js"></script>
     </head>
     <body>
     	<div id="editItemOverlay">
     		<div style="width: 100%; height: 30px; background-color: white;">
 	    		<span style="margin-left:10px; vertical-align: middle;line-height: 30px;font-size: 14px;">
-	    		<img src="img/addItemIcon.png" alt="icon" style="margin-right: 7px;" />
+	    		<img src="${addItemIcon}" alt="icon" style="margin-right: 7px;" />
 	    		<span id="overlayTitle">Add New Item</span>
 	    		</span>
 	    		<div id="addItemOverLayCloseBtn">×</div>

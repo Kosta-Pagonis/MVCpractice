@@ -9,7 +9,7 @@
         <module name="MVCpractice" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
       <module name="MVCpractice" target="1.7" />
     </bytecodeTargetLevel>
   </component>
