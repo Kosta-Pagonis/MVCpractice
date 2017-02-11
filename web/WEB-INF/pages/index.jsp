@@ -14,7 +14,7 @@
   Hey.
   <br>
   <!-- This button takes you to the hello page -->
-  <input type="button"  onclick="location.href='/hello'" value="Hello">
+  <input type="button"  onclick="location.href='/name'" value="Hello">
   <br>
   <!-- This button takes you to the todolist page -->
   <input type="button"  onclick="location.href='/todolist'" value="todolist">
