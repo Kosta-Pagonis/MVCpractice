@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Jonathan
-  Date: 2/7/2017
-  Time: 2:12 PM
+  Date: 2/11/2017
+  Time: 2:48 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -29,9 +29,9 @@
                     <em class="navbar-brand todolist-navbar-logo">ToDoList</em>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a onclick="location.href='/lists_all'" href="/lists_all">
-                            All <span class="sr-only">(current)</span>
+                            All
                         </a>
                     </li>
                     <li>
@@ -39,9 +39,9 @@
                             Public
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a onclick="location.href='/lists_private'" href="/lists_private">
-                            Private
+                            Private  <span class="sr-only">(current)</span>
                         </a>
                     </li>
                 </ul>
@@ -53,7 +53,7 @@
 
         <!-- ALL Lists Page Content Starts HERE -->
         <div class="container-fluid">
-            <h2>All ToDo Lists</h2>
+            <h2>Private ToDo Lists</h2>
 
             <button type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-plus"></span> Create New List
@@ -70,16 +70,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Sample List 1</td>
-                        <td>Sample Owner 1</td>
-                    </tr>
-                    <tr>
                         <td>Sample List 2</td>
                         <td>Sample Owner 1</td>
-                    </tr>
-                    <tr>
-                        <td>Sample List 3</td>
-                        <td>Sample Owner 2</td>
                     </tr>
                 </tbody>
             </table>
@@ -87,3 +79,4 @@
 
     </body>
 </html>
+

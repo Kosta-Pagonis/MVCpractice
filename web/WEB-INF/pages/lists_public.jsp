@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Jonathan
-  Date: 2/7/2017
-  Time: 2:12 PM
+  Date: 2/11/2017
+  Time: 12:12 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -29,14 +29,14 @@
                     <em class="navbar-brand todolist-navbar-logo">ToDoList</em>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a onclick="location.href='/lists_all'" href="/lists_all">
-                            All <span class="sr-only">(current)</span>
+                            All
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a onclick="location.href='/lists_public'" href="/lists_public">
-                            Public
+                            Public <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li>
@@ -53,7 +53,7 @@
 
         <!-- ALL Lists Page Content Starts HERE -->
         <div class="container-fluid">
-            <h2>All ToDo Lists</h2>
+            <h2>Public ToDo Lists</h2>
 
             <button type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-plus"></span> Create New List
@@ -63,18 +63,14 @@
             <p>Click on a ToDo List in the table below to view it.</p>
             <table class="table table-hover table-bordered todolist-table">
                 <thead>
-                    <tr>
-                        <th>List Name</th>
-                        <th>Owner</th>
-                    </tr>
+                <tr>
+                    <th>List Name</th>
+                    <th>Owner</th>
+                </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Sample List 1</td>
-                        <td>Sample Owner 1</td>
-                    </tr>
-                    <tr>
-                        <td>Sample List 2</td>
                         <td>Sample Owner 1</td>
                     </tr>
                     <tr>

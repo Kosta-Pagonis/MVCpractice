@@ -32,6 +32,15 @@
 }
 
 /* Bootstrap style overrides ===> NAVBAR */
+.todolist-navbar .navbar-nav > li {
+    border-right-color: #7777DD;
+    border-left-color: #7777DD;
+    border-top-style: none;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: none;
+    border-width: 1px;
+}
 .todolist-navbar .navbar-nav > li > a{
     color: black;
 }
@@ -49,3 +58,5 @@
     background-color: #c4c4ff;
 
 }
+
+/* Bootstrap style overrides ==> Buttons */
