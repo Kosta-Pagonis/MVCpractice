@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/index")
-public class WelcomeController{
+@RequestMapping("/lists_all")
 
+/**
+ * Created by Jonathan on 2/11/2017.
+ */
+public class AllToDoListsController {
     @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model) {
-        //model.addAttribute("message", "Another page with MVC!");
-        return "index";//Name of the jsp
+        return "lists_all";//Name of the jsp
     }
 }
