@@ -20,4 +20,8 @@
   <input type="button"  onclick="location.href='/todolist'" value="todolist">
   </body>
   <h2>${message}</h2>
+  <form action="/name" method="GET">
+    <input type="text" name="myname" required>
+    <input type="submit">
+  </form>
 </html>

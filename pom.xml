@@ -8,11 +8,24 @@
     <artifactId>MVCpractice</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- [START set_versions] -->
+    <properties>
+        <appengine.app.version>1</appengine.app.version>
+        <appengine.sdk.version>1.9.48</appengine.sdk.version>
 
-    <properties>  <!-- App Engine Standard currently requires Java 7 -->
+        <objectify.version>5.1.5</objectify.version>
+        <guava.version>18.0</guava.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- App Engine Standard currently requires Java 7 -->
         <maven.compiler.target>1.7</maven.compiler.target>
         <maven.compiler.source>1.7</maven.compiler.source>
     </properties>
+
+    <prerequisites>
+        <maven>3.1.0</maven>
+    </prerequisites>
+    <!-- [END set_versions] -->
     <!-- Following the tutorial here: http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/ -->
     <build>
 
@@ -65,5 +78,39 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.cloud.datastore</groupId>
+            <artifactId>datastore-v1-proto-client-parent</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- Compile/runtime dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- [START Objectify_Dependencies] -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.objectify</groupId>
+            <artifactId>objectify</artifactId>
+            <version>${objectify.version}</version>
+        </dependency>
+        <!-- [END Objectify_Dependencies] -->
     </dependencies>
 </project>

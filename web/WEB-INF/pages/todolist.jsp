@@ -3,7 +3,7 @@
 <html>
     <head>
 		<spring:url value="/resources/css/toDoTable.css" var="toDoTableCSS" />
-		<spring:url value="/resources/js/jquery-311min.jsp" var="jqueryJs" />
+		<spring:url value="/resources/js/jquery-311min.js" var="jqueryJs" />
 		<spring:url value="/resources/js/toDoTable.js" var="toDoTableJs" />
 		<spring:url value="/resources/img/addItemIcon.png" var="addItemIcon" />
 		<link href="${toDoTableCSS}" rel="stylesheet" />
@@ -24,27 +24,27 @@
     		<div style="width: 200px; height: 40px; background-color: rgb(255,228,196); line-height: 40px; text-align: center; font-size: 26px; margin-top: 10px; margin-left: 15px;" 		id="overlaySubTitle">New Item Details</div>
     		<div class="AddNewItemText">
     			<b style="display: block; float: left;">Category:</b>
-    			<input id="Category" type="text" name="Category" style="display: block; float: right; margin-top: 10px; margin-right: 30px;width: 140px;" 		 />
+    			<input id="Category" type="text" name="Category" style="display: block; float: right; margin-top: 10px; margin-right: 30px;width: 140px;" 	title="Category"	 />
     			<br style="clear: both;" />
     		</div>
     		<div class="AddNewItemText">
     			<b style="display: block; float: left;">Description:</b>
-    			<input id="Description" type="text" name="Description" style="display: block; float: right; margin-top: 10px; margin-right: 30px;width: 140px;"  />
+    			<input id="Description" type="text" name="Description" style="display: block; float: right; margin-top: 10px; margin-right: 30px;width: 140px;"  title="Description" />
     			<br style="clear: both;" />
     		</div>
     		<div class="AddNewItemText">
     			<b style="display: block; float: left;">Fecha Inicial:</b>
-    			<input id="Fecha_Inicial" type="date" name="Fecha_Inicial" style="display: block; float: right; margin-top: 10px; margin-right: 30px;width: 140px;" />
+    			<input id="Fecha_Inicial" type="date" name="Fecha_Inicial" style="display: block; float: right; margin-top: 10px; margin-right: 30px;width: 140px;" title="Fecha_inicail" />
     			<br style="clear: both;" />
     		</div>
     		<div class="AddNewItemText">
     			<b style="display: block; float: left;">End Date:</b>
-    			<input id="End_Date" type="date" name="End_Date" style="display: block; float: right; margin-top: 10px; margin-right: 30px;"  />
+    			<input id="End_Date" type="date" name="End_Date" style="display: block; float: right; margin-top: 10px; margin-right: 30px;" title="End_Date"  />
     			<br style="clear: both;" />
     		</div>
     		<div class="AddNewItemText">
     			<b style="display: block; float: left;">Completed:</b>
-    			<input id="Completed" type="checkbox" name="Completed" style="display: block; float: right; margin-top: 10px; margin-right: 85px; width: 140px;" />
+    			<input id="Completed" type="checkbox" name="Completed" style="display: block; float: right; margin-top: 10px; margin-right: 85px; width: 140px;" title="Completed" />
     			<br style="clear: both;" />
     		</div>
     		<button id="addItemOkBtn" style="margin-left: 15px; margin-top: 15px;">OK</button> 
@@ -61,7 +61,7 @@
             <div id="toDoDetailsDiv">
             	<div style="margin-left: 15px; font-size:18px; margin-top: 15px;"><b>Details</b></div>
             	<div style="margin-left: 15px; font-size: 12px; margin-top: 10px">
-            		<b>Name of Todo List:</b> <input id="toDoName" type="text" name="toDoName" />
+            		<b>Name of Todo List:</b> <input id="toDoName" type="text" name="toDoName" title="toDoName" />
             		<b>Owner:</b> <input id="toDoOwner" type="text" name="toDoOwner" disabled placeholder="Get from Google Account" />
             	</div>
             </div>

@@ -1,12 +1,15 @@
 package helloPackage;
+
+/**
+
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
-/**
+
  * Created by Spartanrme on 2/9/2017.
  * Following the tutorial from: https://cloud.google.com/datastore/docs/reference/libraries
- */
+
 public class dataStore {
     public static void main(String... args) throws Exception {
         // Instantiates a client
@@ -29,3 +32,5 @@ public class dataStore {
         System.out.printf("Saved %s: %s%n", task.getKey().getName(), task.getString("description"));
     }
 }
+
+*/
