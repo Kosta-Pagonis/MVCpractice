@@ -10,9 +10,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% ObjectifyService.register(TodoList.class);
-   ObjectifyService.register(TodoItem.class);%>
+   ObjectifyService.register(TodoItem.class);
+%>
 <html>
     <head>
+        <meta name="google-signin-client_id" content="1027240453637-n7gq0t7hs7sq0nu30p4keu797ui3rhcm.apps.googleusercontent.com">
         <title>ToDoList WebApp</title>
 
         <spring:url value="/resources/css/bootstrap.css" var="BootstrapCSS" />
@@ -32,7 +34,8 @@
                     <em class="navbar-brand todolist-navbar-logo">ToDoList</em>
                 </div>
                 <div class="navbar-right">
-                    <span class="navbar-text" onclick="location.href='/lists_all'" style="cursor:pointer;">LOGIN</span>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <%--<span class="navbar-text" onclick="location.href='/lists_all'" style="cursor:pointer;">LOGIN</span>--%>
                 </div>
             </div>
         </nav>
@@ -42,5 +45,11 @@
 
             To begin, please login.
         </div>
+        <form action="/SetLoginEmailServlet" method="POST" id="usernamehiddenform">
+            <input type="hidden" name="loginemail" value="notloggedin" id="loginemail"/>
+        </form>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="../resources/js/googleSignIn.js" async defer></script>
+
     </body>
 </html>

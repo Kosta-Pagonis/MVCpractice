@@ -49,6 +49,14 @@
         <url-pattern>/todolistcoe</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SetLoginEmailServlet</servlet-name>
+        <servlet-class>helloPackage.servlets.SetLoginEmailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetLoginEmailServlet</servlet-name>
+        <url-pattern>/SetLoginEmailServlet</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>ObjectifyFilter</filter-name>

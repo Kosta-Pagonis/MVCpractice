@@ -1,6 +1,7 @@
 <%@ page import="com.googlecode.objectify.ObjectifyService" %>
 <%@ page import="helloPackage.dataObject.TodoList" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="helloPackage.dataObject.TodoItem" %><%--
   Created by IntelliJ IDEA.
   User: Jonathan
   Date: 2/7/2017
@@ -9,7 +10,11 @@
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% String myname = "Name obtained from Google Account"; %>
+<%  ObjectifyService.register(TodoList.class);
+    ObjectifyService.register(TodoItem.class);
+    String myname = "Name obtained from Google Account";
+    myname = (String)session.getAttribute("loginemail");
+%>
 <html>
     <head>
         <meta name="google-signin-client_id" content="1027240453637-n7gq0t7hs7sq0nu30p4keu797ui3rhcm.apps.googleusercontent.com">
@@ -84,7 +89,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <%--<span class="navbar-text"><%=myname%></span>--%>
+                    <span class="navbar-text"><%=myname%></span>
                     <%--<span class="navbar-text" onclick="location.href='/index'" style="cursor: pointer;">LOGOUT</span>--%>
                 </div>
             </div>
@@ -121,7 +126,7 @@
                                 }else{
                                     %><td style="cursor:pointer; color:red;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%=list.getListName()+" (private)"%> </td> <%
                                 }
-                      %><td><%=list.getOwnerName()%>
+                      %><td><%=list.getOwnerName()%><%if(myname.equalsIgnoreCase(list.getOwnerName())){%>(You)<%}%>
                         <%if(myname.equalsIgnoreCase(list.getOwnerName())){
                             %><span style="float:right; color:white;" class="deleteClass" onclick="location.href='todolistcoe?prevpage=lists_all&operation=deletion&listid=<%=list.id%>'">Delete</span><%
                         }%>
