@@ -11,7 +11,7 @@ var profile;
 var auth2;
 function onSignIn(googleUser) {
     profile = googleUser.getBasicProfile();
-    window.open("/lists_all","_self",false);
+    //window.open("/lists_all","_self",false);
     userId =  profile.getId(); // Do not send to your backend! Use an ID token instead.
     localStorage.setItem("userUrl",plusUrl.concat(userId));
     firstName =  profile.getGivenName();
@@ -22,6 +22,8 @@ function onSignIn(googleUser) {
     localStorage.setItem("imgSrc",imgSrc);
     email =  profile.getEmail(); // This is null if the 'email' scope is not present.
     localStorage.setItem("email",email);
+    $("#loginemail").val(email);
+    $("#usernamehiddenform").submit();
 
 }
 function onLoad() {
