@@ -15,12 +15,13 @@ public class TodoItem {
     //have to be capitalized L-ong, not long, its value will be auto-generated
     //Primary Key
     @Id public Long id;
-    // five attributes
+    // 6 attributes
     @Index private String category;
     @Index private String description;
     @Index private String startDate;
     @Index private String endDate;
     @Index private String completed;
+    @Index private String orderCount;
 
 
     public TodoItem(){
@@ -29,9 +30,10 @@ public class TodoItem {
         this.startDate = "";
         this.endDate = "";
         this.completed = "";
+        this.orderCount = "-1";
     }
     public TodoItem(String category, String description,String startDate,
-                    String endDate, String completed, TodoList theParentList){
+                    String endDate, String completed, String orderCount,TodoList theParentList){
         this();
         theList = Key.create(TodoList.class,theParentList.id);
         if(category!=null){
@@ -48,6 +50,9 @@ public class TodoItem {
         }
         if(completed!=null){
             this.completed = completed;
+        }
+        if(orderCount!=null){
+            this.orderCount = orderCount;
         }
     }
 
@@ -98,5 +103,13 @@ public class TodoItem {
 
     public void setTheParentList(Key<TodoList> theList) {
         this.theList = theList;
+    }
+
+    public String getOrderCount() {
+        return orderCount;
+    }
+
+    public void setOrderCount(String orderCount) {
+        this.orderCount = orderCount;
     }
 }

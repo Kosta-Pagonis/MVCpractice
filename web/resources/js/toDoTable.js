@@ -45,9 +45,6 @@ $( document ).ready(function() {
 		}
 	});
 
-	if(getURLParam("saved")=="true"){
-		alert("List Saved");
-	}
 
 });
 
@@ -168,6 +165,7 @@ function createNewTodoList(){
 function saveTodoList(){
 
     if($("#itemTable tbody tr").length>0){
+    	var orderCount = 0;
         $("#itemTable tbody tr").each(function () {
             var category = $(this).children().first().text();
             var description= $(this).children().first().next().text();
@@ -179,7 +177,8 @@ function saveTodoList(){
             $('<input type="hidden" name="a_startDate" form="hiddenForm" />').attr("value",startDate).appendTo("#hiddenForm");
             $('<input type="hidden" name="a_endDate" form="hiddenForm" />').attr("value",endDate).appendTo("#hiddenForm");
             $('<input type="hidden" name="a_completed" form="hiddenForm" />').attr("value",completed).appendTo("#hiddenForm");
-
+            $('<input type="hidden" name="a_orderCount" form="hiddenForm" />').attr("value",orderCount).appendTo("#hiddenForm");
+            orderCount++;
         });
     }
 	$("#hiddenForm").submit();

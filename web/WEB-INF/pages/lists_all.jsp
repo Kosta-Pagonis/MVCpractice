@@ -80,17 +80,29 @@
                                 if(!myname.equalsIgnoreCase(list.getOwnerName())&& !list.getIsPrivate().equalsIgnoreCase("false")){
                                     continue;
                                 }
-                                %><tr style="cursor:pointer;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%
+                                %><tr class="tablerow"><%
                                 if(list.getIsPrivate().equalsIgnoreCase("false")){
-                                 %> <td><%=list.getListName()%> </td> <%
+                                    %> <td style="cursor:pointer;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%=list.getListName()%> </td> <%
                                 }else{
-                                    %><td style="color: red;"><%=list.getListName()+" (private)"%> </td> <%
+                                    %><td style="cursor:pointer; color:red;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%=list.getListName()+" (private)"%> </td> <%
                                 }
-                      %><td><%=list.getOwnerName()%> </td></tr>
+                      %><td><%=list.getOwnerName()%>
+                        <%if(myname.equalsIgnoreCase(list.getOwnerName())){
+                            %><span style="float:right; color:white;" class="deleteClass" onclick="location.href='todolistcoe?prevpage=lists_all&operation=deletion&listid=<%=list.id%>'">Delete</span><%
+                        }%>
+                        </td></tr>
                     <%
                             }
                         }
                     %>
+                    <script type="text/javascript">
+                        $(".tablerow").mouseover(function() {
+                            $(this).find(".deleteClass").css("color","red").css("cursor","pointer");
+
+                        }).mouseout(function () {
+                            $(this).find(".deleteClass").css("color","white");
+                        });
+                    </script>
                 </tbody>
             </table>
         </div>

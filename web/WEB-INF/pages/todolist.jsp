@@ -17,9 +17,10 @@
 	todoListName = todoList.getListName();
 	todoListOwner = todoList.getOwnerName();
 	isPrivate = todoList.getIsPrivate();
-	todoItems = ObjectifyService.ofy().load().type(TodoItem.class).ancestor(todoList).list();
+	todoItems = ObjectifyService.ofy().load().type(TodoItem.class).ancestor(todoList).order("orderCount").list();
 	}
 	boolean amItheOwner = myname.equalsIgnoreCase(todoListOwner);
+
 %>
 <html>
     <head>
