@@ -29,14 +29,12 @@ $( document ).ready(function() {
 		clickDownItemBtn();
 	});
 	$("#createNewBtn").click(function(){
-		var reply = confirm("Do you want to save your work?");
+		var reply = confirm("Be sure to save your changes first, otherwise your changes will be lost." +
+			" If you have saved changes, click OK to continue:");
 		if(reply==true){
-			if($.trim( $('#toDoName').val() ) !== ''){	
-				saveTodoList();
-				createNewTodoList();
-			}else{
-				alert("Todo List Name Can't Be Empty!");
-			}
+            location.href="/todolist?operation=creation";
+		}else {
+            //do nothing
 		}
 	});
 	$("#SaveBtn").click(function(){
@@ -46,6 +44,10 @@ $( document ).ready(function() {
 			alert("Todo List Name Can't Be Empty!");
 		}
 	});
+
+	if(getURLParam("saved")=="true"){
+		alert("List Saved");
+	}
 
 });
 
@@ -164,5 +166,31 @@ function createNewTodoList(){
 }
 
 function saveTodoList(){
-	alert("Will save by JSP");
+
+    if($("#itemTable tbody tr").length>0){
+        $("#itemTable tbody tr").each(function () {
+            var category = $(this).children().first().text();
+            var description= $(this).children().first().next().text();
+            var startDate = $(this).children().first().next().next().text();
+            var endDate = $(this).children().first().next().next().next().text();
+            var completed  = $(this).children().last().text();
+            $('<input type="hidden" name="a_category" form="hiddenForm" />').attr("value",category).appendTo("#hiddenForm");
+            $('<input type="hidden" name="a_description" form="hiddenForm" />').attr("value",description).appendTo("#hiddenForm");
+            $('<input type="hidden" name="a_startDate" form="hiddenForm" />').attr("value",startDate).appendTo("#hiddenForm");
+            $('<input type="hidden" name="a_endDate" form="hiddenForm" />').attr("value",endDate).appendTo("#hiddenForm");
+            $('<input type="hidden" name="a_completed" form="hiddenForm" />').attr("value",completed).appendTo("#hiddenForm");
+
+        });
+    }
+	$("#hiddenForm").submit();
+}
+
+function getURLParam(sParam){
+	var sPageURL = window.location.search.substr(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+         var sParameterName = sURLVariables[i].split('=');
+    if (sParameterName[0] == sParam){
+        return sParameterName[1];
+    }
 }

@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.googlecode.objectify.ObjectifyService" %>
+<%@ page import="helloPackage.dataObject.TodoList" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Jonathan
   Date: 2/7/2017
@@ -7,6 +9,7 @@
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% String myname = "Name obtained from Google Account"; %>
 <html>
     <head>
         <title>ToDoList WebApp</title>
@@ -46,7 +49,8 @@
                     </li>
                 </ul>
                 <div class="navbar-right">
-                    <span class="navbar-text" onclick="location.href='/index'">LOGOUT</span>
+                    <span class="navbar-text"><%=myname%></span>
+                    <span class="navbar-text" onclick="location.href='/index'" style="cursor: pointer;">LOGOUT</span>
                 </div>
             </div>
         </nav>
@@ -55,8 +59,8 @@
         <div class="container-fluid">
             <h2>All ToDo Lists</h2>
 
-            <button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-plus"></span> Create New List
+            <button type="button" class="btn btn-default" onclick="location.href='/todolist?operation=creation'">
+                <span class="glyphicon glyphicon-plus" ></span> Create New List
             </button>
 
             <h3>Edit List</h3>
@@ -69,18 +73,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Sample List 1</td>
-                        <td>Sample Owner 1</td>
-                    </tr>
-                    <tr>
-                        <td>Sample List 2</td>
-                        <td>Sample Owner 1</td>
-                    </tr>
-                    <tr>
-                        <td>Sample List 3</td>
-                        <td>Sample Owner 2</td>
-                    </tr>
+                    <%
+                        List<TodoList> todoLists = ObjectifyService.ofy().load().type(TodoList.class).order("-date").list();
+                        if(!todoLists.isEmpty()){
+                            for (TodoList list: todoLists) {
+                                if(!myname.equalsIgnoreCase(list.getOwnerName())&& !list.getIsPrivate().equalsIgnoreCase("false")){
+                                    continue;
+                                }
+                                %><tr style="cursor:pointer;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%
+                                if(list.getIsPrivate().equalsIgnoreCase("false")){
+                                 %> <td><%=list.getListName()%> </td> <%
+                                }else{
+                                    %><td style="color: red;"><%=list.getListName()+" (private)"%> </td> <%
+                                }
+                      %><td><%=list.getOwnerName()%> </td></tr>
+                    <%
+                            }
+                        }
+                    %>
                 </tbody>
             </table>
         </div>
