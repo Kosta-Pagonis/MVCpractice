@@ -86,7 +86,6 @@
                             </ul>
                         </li>
                     </ul>
-                    <span class="navbar-text"><%=myname%></span>
                 </div>
             </div>
         </nav>

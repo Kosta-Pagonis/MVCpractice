@@ -33,10 +33,8 @@
                 <div class="navbar-header">
                     <em class="navbar-brand todolist-navbar-logo">ToDoList</em>
                 </div>
-                <div class="navbar-right">
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="navbar-right g-signin2" data-onsuccess="onSignIn"></div>
                     <%--<span class="navbar-text" onclick="location.href='/lists_all'" style="cursor:pointer;">LOGIN</span>--%>
-                </div>
             </div>
         </nav>
 

@@ -29,7 +29,7 @@
 		<spring:url value="/resources/css/toDoTable.css" var="toDoTableCSS" />
 		<spring:url value="/resources/js/jquery-311min.jsp" var="jqueryJs" />
 		<spring:url value="/resources/js/toDoTable.js" var="toDoTableJs" />
-		<spring:url value="/resources/img/addItemIcon.png" var="addItemIcon" />
+		<spring:url value="/resources/img/addItemIcon.png" var="addItemIconUI"/>
 		<spring:url value="/resources/css/bootstrap.css" var="BootstrapCSS" />
 		<spring:url value="/resources/css/main-styles.css" var="MainStyles" />
 		<spring:url value="/resources/js/bootstrap.js" var="BootstrapJS" />
@@ -53,7 +53,7 @@
 				<em class="navbar-brand todolist-navbar-logo">ToDoList</em>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active">
+				<li>
 					<a onclick="location.href='/lists_all'" href="/lists_all">
 						All <span class="sr-only">(current)</span>
 					</a>
@@ -103,7 +103,6 @@
 						</ul>
 					</li>
 				</ul>
-				<span class="navbar-text"><%=myname%></span>
 				<!--
 				<span class="navbar-text" onclick="location.href='/index'" style="cursor: pointer;">LOGOUT</span>
 
@@ -116,7 +115,7 @@
 	<div id="editItemOverlay">
     		<div style="width: 100%; height: 30px; background-color: white;">
 	    		<span style="margin-left:10px; vertical-align: middle;line-height: 30px;font-size: 14px;">
-	    		<img src="${addItemIcon}" alt="icon" style="margin-right: 7px;" />
+					<span class="glyphicon glyphicon-plus-sign"></span>
 	    		<span id="overlayTitle">Add New Item</span>
 	    		</span>
 	    		<div id="addItemOverLayCloseBtn">×</div>

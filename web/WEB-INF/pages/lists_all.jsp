@@ -89,7 +89,6 @@
                             </ul>
                         </li>
                     </ul>
-                    <span class="navbar-text"><%=myname%></span>
                     <%--<span class="navbar-text" onclick="location.href='/index'" style="cursor: pointer;">LOGOUT</span>--%>
                 </div>
             </div>
