@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.googlecode.objectify.ObjectifyService" %>
+<%@ page import="helloPackage.dataObject.TodoList" %>
+<%@ page import="helloPackage.dataObject.TodoItem" %><%--
   Created by IntelliJ IDEA.
   User: AjaxSurangama
   Date: 2/6/2017
@@ -7,6 +9,8 @@
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% ObjectifyService.register(TodoList.class);
+   ObjectifyService.register(TodoItem.class);%>
 <html>
     <head>
         <title>ToDoList WebApp</title>
@@ -28,7 +32,7 @@
                     <em class="navbar-brand todolist-navbar-logo">ToDoList</em>
                 </div>
                 <div class="navbar-right">
-                    <span class="navbar-text" onclick="location.href='/lists_all'">LOGIN</span>
+                    <span class="navbar-text" onclick="location.href='/lists_all'" style="cursor:pointer;">LOGIN</span>
                 </div>
             </div>
         </nav>

@@ -40,12 +40,22 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>TodoListServlet</servlet-name>
+        <servlet-class>helloPackage.servlets.TodoListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TodoListServlet</servlet-name>
+        <url-pattern>/todolistcoe</url-pattern>
+    </servlet-mapping>
+
+
     <filter>
         <filter-name>ObjectifyFilter</filter-name>
         <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>ObjectifyFilter</filter-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 </web-app>
