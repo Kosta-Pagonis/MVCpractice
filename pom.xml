@@ -35,18 +35,13 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-
-        </plugins>
-    </build>
-   <build>
-    <plugins>
-        <plugin>
+            <plugin>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-maven-plugin</artifactId>
             <version>1.9.49</version>
         </plugin>
-    </plugins>
-</build>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
