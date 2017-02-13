@@ -11,7 +11,6 @@ var profile;
 var auth2;
 function onSignIn(googleUser) {
     profile = googleUser.getBasicProfile();
-    //window.open("/lists_all","_self",false);
     userId =  profile.getId(); // Do not send to your backend! Use an ID token instead.
     localStorage.setItem("userUrl",plusUrl.concat(userId));
     firstName =  profile.getGivenName();
@@ -23,6 +22,8 @@ function onSignIn(googleUser) {
     email =  profile.getEmail(); // This is null if the 'email' scope is not present.
     localStorage.setItem("email",email);
     $("#loginemail").val(email);
+
+    //window.open("/lists_all","_self",false);
     $("#usernamehiddenform").submit();
 
 }
@@ -55,6 +56,6 @@ function signOut() {
     auth2.signOut().then(function () {
         console.log('User signed out.');
     });
-    window.open("/index","_self",false);
+    window.open("https://accounts.google.com/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://todolistmaker-158516.appspot.com","_self",false);
 }
 

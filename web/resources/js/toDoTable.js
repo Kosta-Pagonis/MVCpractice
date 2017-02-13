@@ -32,7 +32,7 @@ $( document ).ready(function() {
 		var reply = confirm("Be sure to save your changes first, otherwise your changes will be lost." +
 			" If you have saved changes, click OK to continue:");
 		if(reply==true){
-            location.href="/todolist?operation=creation";
+            location.href="/todolist.jsp?operation=creation";
 		}else {
             //do nothing
 		}

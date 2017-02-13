@@ -17,7 +17,7 @@
 %>
 <html>
     <head>
-        <meta name="google-signin-client_id" content="1027240453637-n7gq0t7hs7sq0nu30p4keu797ui3rhcm.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="115960067068-mbk1drrrcnlctedq26qjnbcug9gt5qdf.apps.googleusercontent.com">
         <title>ToDoList WebApp</title>
 
         <spring:url value="/resources/css/bootstrap.css" var="BootstrapCSS" />
@@ -41,17 +41,17 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a onclick="location.href='/lists_all'" href="/lists_all">
+                        <a onclick="location.href='lists_all.jsp'" href="lists_all.jsp">
                             All <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li>
-                        <a onclick="location.href='/lists_public'" href="/lists_public">
+                        <a onclick="location.href='lists_public.jsp'" href="lists_public.jsp">
                             Public
                         </a>
                     </li>
                     <li>
-                        <a onclick="location.href='/lists_private'" href="/lists_private">
+                        <a onclick="location.href='lists_private.jsp'" href="lists_private.jsp">
                             Private
                         </a>
                     </li>
@@ -98,7 +98,7 @@
         <div class="container-fluid">
             <h2>All ToDo Lists</h2>
 
-            <button type="button" class="btn btn-default" onclick="location.href='/todolist?operation=creation'">
+            <button type="button" class="btn btn-default" onclick="location.href='todolist.jsp?operation=creation'">
                 <span class="glyphicon glyphicon-plus" ></span> Create New List
             </button>
 
@@ -121,9 +121,9 @@
                                 }
                                 %><tr class="tablerow"><%
                                 if(list.getIsPrivate().equalsIgnoreCase("false")){
-                                    %> <td style="cursor:pointer;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%=list.getListName()%> </td> <%
+                                    %> <td style="cursor:pointer;" onclick="location.href='todolist.jsp?operation=edition&listid=<%=list.id%>'"><%=list.getListName()%> </td> <%
                                 }else{
-                                    %><td style="cursor:pointer; color:red;" onclick="location.href='/todolist?operation=edition&listid=<%=list.id%>'"><%=list.getListName()+" (private)"%> </td> <%
+                                    %><td style="cursor:pointer; color:red;" onclick="location.href='todolist.jsp?operation=edition&listid=<%=list.id%>'"><%=list.getListName()+" (private)"%> </td> <%
                                 }
                       %><td><%=list.getOwnerName()%><%if(myname.equalsIgnoreCase(list.getOwnerName())){%>(You)<%}%>
                         <%if(myname.equalsIgnoreCase(list.getOwnerName())){

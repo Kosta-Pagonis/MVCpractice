@@ -46,7 +46,7 @@ public class TodoListServlet extends HttpServlet {
                 }
             }
             Long listid = ObjectifyService.ofy().load().entity(a_list).now().id;
-            resp.sendRedirect("todolist?operation=edition&saved=true&listid="+listid);
+            resp.sendRedirect("todolist.jsp?operation=edition&saved=true&listid="+listid);
 
         }else if(s.equalsIgnoreCase("edition")){
             //delete first and then re-create (for simplicity....)
@@ -80,7 +80,7 @@ public class TodoListServlet extends HttpServlet {
                 }
             }
             Long newlistid = ObjectifyService.ofy().load().entity(a_list).now().id;
-            resp.sendRedirect("todolist?operation=edition&saved=true&listid="+newlistid);
+            resp.sendRedirect("todolist.jsp?operation=edition&saved=true&listid="+newlistid);
 
         }else if(s.equalsIgnoreCase("deletion")){
             //deletion
@@ -92,7 +92,7 @@ public class TodoListServlet extends HttpServlet {
             ObjectifyService.ofy().delete().entity(todoList).now();
             //go back to the previous page
             String prevPage = req.getParameter("prevpage");
-            resp.sendRedirect(prevPage);
+            resp.sendRedirect(prevPage+".jsp");
 
         }else {
             resp.sendError(404,"Invalid Page");

@@ -17,6 +17,6 @@ public class SetLoginEmailServlet extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("loginemail",userEmail );
         System.out.println(req.getParameter("loginemail"));
-        resp.sendRedirect("lists_all?user="+userEmail);
+        resp.sendRedirect("lists_all.jsp?user="+userEmail);
     }
 }

@@ -25,7 +25,7 @@
 %>
 <html>
     <head>
-		<meta name="google-signin-client_id" content="1027240453637-n7gq0t7hs7sq0nu30p4keu797ui3rhcm.apps.googleusercontent.com">
+		<meta name="google-signin-client_id" content="115960067068-mbk1drrrcnlctedq26qjnbcug9gt5qdf.apps.googleusercontent.com">
 		<spring:url value="/resources/css/toDoTable.css" var="toDoTableCSS" />
 		<spring:url value="/resources/js/jquery-311min.jsp" var="jqueryJs" />
 		<spring:url value="/resources/js/toDoTable.js" var="toDoTableJs" />
@@ -54,17 +54,17 @@
 			</div>
 			<ul class="nav navbar-nav">
 				<li>
-					<a onclick="location.href='/lists_all'" href="/lists_all">
+					<a onclick="location.href='lists_all.jsp'" href="lists_all.jsp">
 						All <span class="sr-only">(current)</span>
 					</a>
 				</li>
 				<li>
-					<a onclick="location.href='/lists_public'" href="/lists_public">
+					<a onclick="location.href='lists_public.jsp'" href="lists_public.jsp">
 						Public
 					</a>
 				</li>
 				<li>
-					<a onclick="location.href='/lists_private'" href="/lists_private">
+					<a onclick="location.href='lists_private.jsp'" href="lists_private.jsp">
 						Private
 					</a>
 				</li>
@@ -210,7 +210,7 @@
         </div>
 
 	<!--hidden form, action = servlet -->
-	<form id="hiddenForm" action="/todolistcoe" method="GET">
+	<form id="hiddenForm" action="todolistcoe" method="GET">
 		<% if(request.getParameter("operation").equalsIgnoreCase("creation")){
 		    %><input name="operation" type="hidden" value="creation"><%
 		}else{
