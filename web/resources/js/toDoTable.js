@@ -7,6 +7,7 @@ var isAddingItem = true;
 	    (month<10 ? '0' : '') + month + '-' +
 	    (day<10 ? '0' : '') + day;
 var $curTr = null;
+var sortStat = [0,0,0,0,0];
 $( document ).ready(function() {
 	$("#addItemOverLayCloseBtn, #addItemOverLayCancelBtn").click(function(){
 		closeOverlay();
@@ -46,7 +47,51 @@ $( document ).ready(function() {
 	});
 
 
+    $("#itemTable thead .theadtext").click(function () {
+        if($(this).text()=="Category"){
+            sortTable(0);
+        }else if($(this).text()=="Description"){
+            sortTable(1);
+        }else if($(this).text()=="Start Date"){
+            sortTable(2);
+        }else if($(this).text()=="End Date"){
+            sortTable(3);
+        }else if($(this).text()=="Complete"){
+            sortTable(4);
+        }
+    });
+
 });
+
+function sortTable(whichColum){
+    var rows = $('#itemTable tbody  tr').get();
+
+    rows.sort(function(a, b) {
+
+        var A = $(a).children('td').eq(whichColum).text().toUpperCase();
+        var B = $(b).children('td').eq(whichColum).text().toUpperCase();
+        if(A < B) {
+            if(sortStat[whichColum]==0){
+                return -1;
+            }else{
+                return 1;
+            }
+        }
+        if(A > B) {
+            if(sortStat[whichColum]==0){
+                return 1;
+            }else{
+                return -1;
+            }
+        }
+        return 0;
+    });
+
+    $.each(rows, function(index, row) {
+        $('#itemTable').children('tbody').append(row);
+    });
+    if(sortStat[whichColum]==0){sortStat[whichColum]=1;}else{sortStat[whichColum]=0}
+}
 
 
 function setUpTableClickFuncs(){
@@ -55,13 +100,13 @@ function setUpTableClickFuncs(){
 	}else{
 		$("#emptyTableText").hide();
 	}
-	$("tr").click(function(){
+	$("tbody tr").click(function(){
 		$curTr = $(this); 
 		$("#itemTableDiv tr:nth-child(even)").css("background-color", "f2f2f2");
 		$("#itemTableDiv tr:nth-child(odd)").css("background-color", "white");
 		$(this).css("background-color", "rgb(0,150,201)");
 	});
-	$("tr").dblclick(function(){
+	$("tbody tr").dblclick(function(){
 		isAddingItem = false;
 		$("#overlayTitle").html("Edit Item");
 		$("#overlaySubTitle").html("Edit Item Details");

@@ -2,7 +2,7 @@
 <%@ page import="helloPackage.dataObject.TodoList" %>
 <%@ page import="helloPackage.dataObject.TodoItem" %><%--
   Created by IntelliJ IDEA.
-  User: AjaxSurangama
+  User: Jonathan Leifer
   Date: 2/6/2017
   Time: 6:16 PM
   To change this template use File | Settings | File Templates.

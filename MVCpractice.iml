@@ -16,7 +16,7 @@
     </facet>
     <facet type="google-app-engine" name="Google App Engine">
       <configuration>
-        <sdk-home-path>$MODULE_DIR$/../../46/appengine-java-sdk-1.9.46</sdk-home-path>
+        <sdk-home-path>$MODULE_DIR$/../../appengine-java-sdk-1.9.46</sdk-home-path>
         <files-to-enhance>
           <file path="$MODULE_DIR$/src" />
         </files-to-enhance>
@@ -38,6 +38,11 @@
     <orderEntry type="library" name="AppEngine API" level="project" />
     <orderEntry type="library" name="AppEngine ORM" level="project" />
     <orderEntry type="library" name="Spring MVC-4.3.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.9.48" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.objectify:objectify:5.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.9.48" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
